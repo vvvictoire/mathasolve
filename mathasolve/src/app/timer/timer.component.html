@@ -1,4 +1,4 @@
-{{timeLeft | time}}<br/>
+<div class="center">{{timeLeft | time}}</div>
 <button (click)="startTimer()" [disabled]="isTimerRunning">Start</button>
 <button (click)="pauseTimer()" [disabled]="!isTimerRunning">Pause</button>
 <button (click)="resetTimer()">Reset</button>
