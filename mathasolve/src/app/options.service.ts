@@ -21,5 +21,9 @@ export class OptionsService {
     return [4, 6, 8, 12, 20];
   }
 
+  getMaxTime() : number {
+    return (60 * 5);
+  }
+
   constructor() { }
 }

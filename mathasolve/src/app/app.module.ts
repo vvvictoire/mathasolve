@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NumberDisplayComponent } from './number-display/number-display.component';
 import { RulesComponent } from './rules/rules.component';
+import { TimerComponent } from './timer/timer.component';
+import { TimePipe } from './time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NumberDisplayComponent,
-    RulesComponent
+    RulesComponent,
+    TimerComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
