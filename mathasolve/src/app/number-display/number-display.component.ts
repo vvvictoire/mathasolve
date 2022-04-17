@@ -7,23 +7,29 @@ import { OptionsService } from '../options.service';
   styleUrls: ['./number-display.component.css']
 })
 export class NumberDisplayComponent implements OnInit {
-  target_number: number = 0;
+  targetNumber: number = 0;
   numbers: number[] = new Array();
-  NUMBER_OF_NUMBERS = 5;
+  options: OptionsService;
 
   random(minimum: number, maximum: number): number {
     return  Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum;;
   };
 
-  constructor(private optionService: OptionsService) {
-    this.target_number = this.random(1, optionService.getMaxTargetNumber());
-    let max_numbers = this.optionService.getMaxNumbers();
-    for (let i = 0; i < max_numbers.length; i++){
-      this.numbers.push(this.random(1, max_numbers[i]));
+  reroll(): void {
+    this.numbers = new Array();
+    this.targetNumber = this.random(1, this.options.getMaxTargetNumber());
+    let maxNumbers = this.options.getMaxNumbers();
+    for (let i = 0; i < maxNumbers.length; i++){
+      this.numbers.push(this.random(1, maxNumbers[i]));
     }
+  }
+
+  constructor(private optionService: OptionsService) {
+    this.options = optionService;
    }
 
   ngOnInit(): void {
+    this.reroll();
   }
 
 }
