@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class OptionsService {
 
+  maxMinutes: number = 5;
   getDifficulty(): string {
     return "easy";
   }
@@ -22,7 +23,7 @@ export class OptionsService {
   }
 
   getMaxTime() : number {
-    return (60 * 5);
+    return (60 * this.maxMinutes);
   }
 
   constructor() { }

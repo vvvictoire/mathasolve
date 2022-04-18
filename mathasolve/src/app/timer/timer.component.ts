@@ -11,8 +11,10 @@ export class TimerComponent implements OnInit {
   timeLeft: number = 0;
   interval: NodeJS.Timeout;
   isTimerRunning: boolean = false;
+  options: OptionsService;
 
   constructor(private optionsService: OptionsService) {
+    this.options = optionsService;
     this.maxTime = optionsService.getMaxTime();
     this.interval = setInterval(() => {
       if (this.timeLeft > 0) {
@@ -38,6 +40,7 @@ export class TimerComponent implements OnInit {
 
   resetTimer(): void {
     this.pauseTimer();
+    this.maxTime = this.options.getMaxTime();
     this.timeLeft = this.maxTime;
   }
 

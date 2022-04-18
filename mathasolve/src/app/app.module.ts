@@ -8,6 +8,8 @@ import { RulesComponent } from './rules/rules.component';
 import { TimerComponent } from './timer/timer.component';
 import { TimePipe } from './time.pipe';
 import { TitleComponent } from './title/title.component';
+import { OptionsComponent } from './options/options.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { TitleComponent } from './title/title.component';
     RulesComponent,
     TimerComponent,
     TimePipe,
-    TitleComponent
+    TitleComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
