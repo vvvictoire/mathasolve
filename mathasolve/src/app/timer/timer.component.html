@@ -1,4 +1,6 @@
 <div class="center">{{timeLeft | time}}</div>
-<button (click)="startTimer()" [disabled]="isTimerRunning">Start</button>
-<button (click)="pauseTimer()" [disabled]="!isTimerRunning">Pause</button>
-<button (click)="resetTimer()">Reset</button>
+<div class="pure-button-group" role="group">
+<button (click)="startTimer()" [disabled]="isTimerRunning" class="pure-button">Start</button>
+<button (click)="pauseTimer()" [disabled]="!isTimerRunning" class="pure-button">Pause</button>
+<button (click)="resetTimer()" class="pure-button">Reset</button>
+</div>
