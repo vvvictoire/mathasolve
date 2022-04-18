@@ -7,6 +7,7 @@ import { NumberDisplayComponent } from './number-display/number-display.componen
 import { RulesComponent } from './rules/rules.component';
 import { TimerComponent } from './timer/timer.component';
 import { TimePipe } from './time.pipe';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TimePipe } from './time.pipe';
     NumberDisplayComponent,
     RulesComponent,
     TimerComponent,
-    TimePipe
+    TimePipe,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

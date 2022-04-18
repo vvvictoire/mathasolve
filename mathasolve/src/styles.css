@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .flex-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
