@@ -17,8 +17,8 @@ export class NumberDisplayComponent implements OnInit {
 
   reroll(): void {
     this.numbers = new Array();
-    this.targetNumber = this.random(1, this.options.getMaxTargetNumber());
-    let maxNumbers = this.options.getMaxNumbers();
+    this.targetNumber = this.random(1, this.options.maxTargetNumber);
+    let maxNumbers = this.options.maxNumbers;
     for (let i = 0; i < maxNumbers.length; i++){
       this.numbers.push(this.random(1, maxNumbers[i]));
     }

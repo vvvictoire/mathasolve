@@ -6,21 +6,8 @@ import { Injectable } from '@angular/core';
 export class OptionsService {
 
   maxMinutes: number = 5;
-  getDifficulty(): string {
-    return "easy";
-  }
-
-  getMinNumber(): number {
-    return 0;
-  }
-
-  getMaxTargetNumber(): number {
-    return 99;
-  }
-
-  getMaxNumbers() : number[] {
-    return [4, 6, 8, 12, 20];
-  }
+  maxNumbers: number[] = [4, 6, 8, 12, 20];
+  maxTargetNumber: number = 99;
 
   getMaxTime() : number {
     return (60 * this.maxMinutes);
