@@ -1,4 +1,5 @@
 import { SolutionInterface } from "./solution-interface";
+import * as math from 'mathjs';
 
 export class SolutionClass implements SolutionInterface{
     numbers: number[];
@@ -25,7 +26,7 @@ export class SolutionClass implements SolutionInterface{
         // build the string operation
         let stringOperation = String(firstNumber) + operator + String(secondNumber);
         // evaluate the string operation
-        let result = Function(stringOperation)();
+        let result = math.evaluate(stringOperation);
         return result;
     }
 }
