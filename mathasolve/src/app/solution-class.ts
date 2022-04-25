@@ -17,16 +17,18 @@ export class SolutionClass implements SolutionInterface{
     // todo : check if the input is valid (enough numbers or operators)
 
     calculate(): number {
-        // get the first number of the array
-        let firstNumber = this.numbers.shift();
-        // get the first operator
-        let operator = this.operators.shift();
-        // get the new first number of the array (so the second number)
-        let secondNumber = this.numbers[0];
-        // build the string operation
-        let stringOperation = String(firstNumber) + operator + String(secondNumber);
-        // evaluate the string operation
-        let result = math.evaluate(stringOperation);
-        return result;
+        while(this.operators.length > 0){
+            // get the first number of the array
+            let firstNumber = this.numbers.shift();
+            // get the first operator
+            let operator = this.operators.shift();
+            // get the new first number of the array (so the second number)
+            let secondNumber = this.numbers[0];
+            // build the string operation
+            let stringOperation = String(firstNumber) + operator + String(secondNumber);
+            // evaluate the string operation
+            this.numbers[0] = math.evaluate(stringOperation);
+        }
+        return this.numbers[0];
     }
 }
