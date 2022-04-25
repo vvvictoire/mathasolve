@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TimePipe } from '../time.pipe';
 
 import { TimerComponent } from './timer.component';
 
@@ -8,7 +9,7 @@ describe('TimerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TimerComponent ]
+      declarations: [ TimerComponent, TimePipe ]
     })
     .compileComponents();
   });
