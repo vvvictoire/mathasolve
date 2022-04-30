@@ -48,4 +48,11 @@ describe('SolutionClass', () => {
   it('calculates -1 / 0', () => {
     expect(new SolutionClass([-1, 0], 0, ["/"]).result).toBeNegativeInfinity();
   });
+
+  it('calculates 1+1 without modifying the original arrays', () => {
+    let solution = new SolutionClass([1,1], 0, ["+"]);
+    expect(solution.result).toBe(2);
+    expect(solution.numbers).toEqual([1,1])
+    expect(solution.operators).toEqual(["+"]);
+  });
 });
