@@ -55,4 +55,22 @@ describe('SolutionClass', () => {
     expect(solution.numbers).toEqual([1,1])
     expect(solution.operators).toEqual(["+"]);
   });
+
+  it('computes the score of a simple operation', () => {
+    expect(new SolutionClass([1,1], 0, ["+"]).score).toBe(1);
+    expect(new SolutionClass([1,1], 0, ["-"]).score).toBe(2);
+    expect(new SolutionClass([1,1], 0, ["*"]).score).toBe(1);
+    expect(new SolutionClass([1,1], 0, ["/"]).score).toBe(3);
+  })
+
+  it('computes the score of a more complex solution', () => {
+    expect(new SolutionClass([1,1,1], 0, ["+","*"]).score).toBe(2);
+    expect(new SolutionClass([1,1,1], 0, ["+","-"]).score).toBe(3);
+    expect(new SolutionClass([1,1,1], 0, ["+","/"]).score).toBe(4);
+    expect(new SolutionClass([1,1,1], 0, ["-","/"]).score).toBe(5);
+  })
+
+  it('computes the score of a 4-operation', () => {
+    expect(new SolutionClass([1,1,1,1,1], 0, ["/", "*", "+", "-"]).score).toBe(13);
+  })
 });
