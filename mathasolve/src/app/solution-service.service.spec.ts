@@ -32,5 +32,25 @@ describe('SolutionServiceService', () => {
 
   it('does the cartesian product of simple arrays', () => {
     expect(service.cartesianProduct([1],[2])).toContain([1,2]);
+  });
+
+  it('does the cartesian product of 2-arrays', () => {
+    let result = service.cartesianProduct([1,2], [3,4]);
+    expect(result).toContain([1,3]);
+    expect(result).toContain([1,4]);
+    expect(result).toContain([2,3]);
+    expect(result).toContain([2,4]);
+  });
+
+  it('does the cartesian product of 3 arrays', () => {
+    let result = service.cartesianProduct([1,2], [3,4], [5,6]);
+    expect(result).toContain([1,3,5]);
+    expect(result).toContain([1,3,6]);
+    expect(result).toContain([1,4,5]);
+    expect(result).toContain([1,4,6]);
+    expect(result).toContain([2,3,5]);
+    expect(result).toContain([2,3,6]);
+    expect(result).toContain([2,4,5]);
+    expect(result).toContain([2,4,6]);
   })
 });
