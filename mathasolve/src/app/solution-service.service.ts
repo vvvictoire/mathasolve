@@ -5,28 +5,28 @@ import { Injectable } from '@angular/core';
 })
 export class SolutionServiceService {
 
-  permutations (k:number, exteriorArray:number[], global:any[]): void {
-    let array = exteriorArray.slice();
-    if(k == 1) {
-      global.push(array);
-    }
-    else {
-      this.permutations(k - 1, array, global);
-      for (let i = 0; i < k - 1; i++) {
-        if (k % 2 == 0) {
-          let buffer = array[i];
-          array[i] = array[k - 1];
-          array[k - 1] = buffer;
-        }
-        else {
-          let buffer = array[0];
-          array[0] = array[k - 1];
-          array[k - 1] = buffer;
-        }
-        this.permutations(k - 1, array, global);
-      }
-    }
+  cartesianProduct<T>(...allEntries: T[][]): T[][] {
+    return allEntries.reduce<T[][]>(
+      (results, entries) =>
+        results
+          .map(result => entries.map(entry => result.concat([entry])))
+          .reduce((subResults, result) => subResults.concat(result), []),
+      [[]]
+    )
   }
+  permutations(arr: any[]): any[] {
+    if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
+    return arr.reduce(
+      (acc, item, i) =>
+        acc.concat(
+          this.permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map((val) => [
+            item,
+            ...val,
+          ])
+        ),
+      []
+    );
+  };
 
   constructor() {
   }

@@ -14,9 +14,23 @@ describe('SolutionServiceService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should create some arrays', () => {
-    let results = new Array();
-    service.permutations(2, [1,2],results);
-    expect(results).toContain([2,1], [1,2]);
+  it('permutate simple arrays', () => {
+    let results = service.permutations([1,2]);
+    expect(results).toContain([1,2]);
+    expect(results).toContain([2,1]);
+  });
+
+  it('permutate 3-arrays', () => {
+    let results = service.permutations([1,2,3]);
+    expect(results).toContain([1,2,3]);
+    expect(results).toContain([1,3,2]);
+    expect(results).toContain([2,1,3]);
+    expect(results).toContain([2,3,1]);
+    expect(results).toContain([3,1,2]);
+    expect(results).toContain([3,2,1]);
+  });
+
+  it('does the cartesian product of simple arrays', () => {
+    expect(service.cartesianProduct([1],[2])).toContain([1,2]);
   })
 });
