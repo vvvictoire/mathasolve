@@ -42,7 +42,6 @@ export class SolutionClass implements SolutionInterface{
         // first, check if we have a 4-operations solution
         let perfectSolution = JSON.stringify(["+", "-", "*", "/"].sort());
         let thisSolution = JSON.stringify(this.operators.slice().sort());
-        console.log(perfectSolution, thisSolution);
         if (perfectSolution === thisSolution) {
             return 13;
         }

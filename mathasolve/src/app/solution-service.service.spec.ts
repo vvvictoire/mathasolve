@@ -14,10 +14,9 @@ describe('SolutionServiceService', () => {
     expect(service).toBeTruthy();
   });
 
-  fit('should create some arrays', () => {
+  it('should create some arrays', () => {
     let results = new Array();
     service.permutations(2, [1,2],results);
-    console.log(results);
-    expect(results).toEqual([[1,2], [2,1]]);
+    expect(results).toContain([2,1], [1,2]);
   })
 });
