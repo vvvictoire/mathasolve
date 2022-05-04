@@ -10,6 +10,7 @@ import { TimePipe } from './time.pipe';
 import { TitleComponent } from './title/title.component';
 import { OptionsComponent } from './options/options.component';
 import { FormsModule } from '@angular/forms';
+import { SolutionDisplayComponent } from './solution-display/solution-display.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     TimerComponent,
     TimePipe,
     TitleComponent,
-    OptionsComponent
+    OptionsComponent,
+    SolutionDisplayComponent
   ],
   imports: [
     BrowserModule,
