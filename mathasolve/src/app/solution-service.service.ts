@@ -5,6 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class SolutionServiceService {
 
+  generatePermutations(array: number[]): number[][] {
+    return this.permutations(array);
+  }
+
+  generateOperations(array: string[]): string[][] {
+    return this.cartesianProduct(array);
+  }
+
   cartesianProduct<T>(...allEntries: T[][]): T[][] {
     return allEntries.reduce<T[][]>(
       (results, entries) =>
@@ -14,6 +22,7 @@ export class SolutionServiceService {
       [[]]
     )
   }
+
   permutations(arr: any[]): any[] {
     if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
     return arr.reduce(

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SolutionServiceService } from '../solution-service.service';
 
 @Component({
   selector: 'app-solution-display',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolutionDisplayComponent implements OnInit {
 
-  constructor() { }
+  solutionService: SolutionServiceService;
+
+  constructor(private solutionS:SolutionServiceService) {
+    this.solutionService = solutionS;
+  }
 
   ngOnInit(): void {
   }

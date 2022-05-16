@@ -52,5 +52,17 @@ describe('SolutionServiceService', () => {
     expect(result).toContain([2,3,6]);
     expect(result).toContain([2,4,5]);
     expect(result).toContain([2,4,6]);
+  });
+
+  it('has the correct number of permutations for 5 numbers', () => {
+    let results = service.permutations([1,2,3,4,5]);
+    let resultsSet = new Set(results);
+    expect(resultsSet.size).toBe(120);
+  });
+
+  it('has the correct number of elements in a quadruple cartesian product', () => {
+    let results = service.cartesianProduct(["+", "-", "*", "/"],["+", "-", "*", "/"],["+", "-", "*", "/"],["+", "-", "*", "/"]);
+    let resultsSet = new Set(results);
+    expect(resultsSet.size).toBe(256);
   })
 });
